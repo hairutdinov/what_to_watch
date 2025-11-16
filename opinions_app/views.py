@@ -26,9 +26,7 @@ def add_opinion_view():
             flash('Такое мнение уже было оставлено ранее!')
             return render_template('add_opinion.html', form=form)
         opinion = Opinion(
-            title=form.title.data,
-            text=text,
-            source=form.source.data
+            title=form.title.data, text=text, source=form.source.data
         )
         db.session.add(opinion)
         db.session.commit()
