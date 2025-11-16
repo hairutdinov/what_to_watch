@@ -1,0 +1,23 @@
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+target-version = ["py312"]
+exclude = '''
+/(
+| venv
+| migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 79
+no_lines_before = ["LOCALFOLDER"]
+skip = ["venv", ".venv", "migrations"]
+skip_glob = ["*/migrations/*", "*/venv/*"]
+
+[tool.djlint]
+profile = "jinja"
+indent = 2
+max_line_length = 120
